@@ -8,5 +8,18 @@
       "source": "/(.*)",
       "destination": "/client/dist/index.html"
     }
+  ],
+  "builds": [
+    {
+      "src": "api/main.go",
+      "use": "@vercel/go"
+    },
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "client/dist"
+      }
+    }
   ]
 }
